@@ -1,0 +1,18 @@
+#file position: ~/.gitconfig
+[user]
+	name = Zou,Yong
+	email = zoumengdie@gmail.com
+[color]
+	ui = true
+[alias]
+    st = status
+    adda = add --all .
+    cm = commit -m
+    logo = log --oneline
+    br = branch
+    co = checkout
+	lf = log --pretty=format:\"%h -- %an -- %ar -- %s\"
+[core]
+	excludesfile = /Users/zouyong/.gitignore_global
+[push]
+	default = simple

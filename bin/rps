@@ -1,0 +1,10 @@
+#!/usr/bin/python
+
+import sys, os
+
+str = sys.argv[1]
+str = str.replace('\\', '/')
+result = 'smb:/'+str
+print result
+os.system('echo "'+result+'" | pbcopy')
+
