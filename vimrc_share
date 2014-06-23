@@ -1,0 +1,34 @@
+" Shared vim configurations accross machines
+
+"jk to exit insert mode and save
+:imap jk <Esc>:w<cr>
+"Use jk to save in normal mode
+:nmap jk :w<cr>
+
+"nt to toggle NERDTree window
+:nmap nt :NERDTree<cr>
+
+"C-W to switch bewteen NERDTree window and the editor window
+:nmap <C-Q> <C-W><C-W>
+:imap <C-Q> <Esc><C-W>
+
+"make vim colorful
+filetype plugin indent on
+syntax on
+
+"Set tabstop to 4
+set tabstop=4
+"Replace tab with spaces
+set expandtab
+"Use 4 spaces for indention
+:set shiftwidth=4
+
+"Use ; as : in normal mode
+:nmap ; :
+
+"Immediately show search result, while typing
+set incsearch
+
+"Control+[ to show previous tab and Control+] to show next tab
+:nmap <C-[> :tabp<cr>
+:nmap <C-]> :tabn<cr>
