@@ -29,6 +29,6 @@ set expandtab
 "Immediately show search result, while typing
 set incsearch
 
-"Control+[ to show previous tab and Control+] to show next tab
-:nmap <C-[> :tabp<cr>
-:nmap <C-]> :tabn<cr>
+"Control+Command+[ to show previous tab and Control+Command+] to show next tab
+:nmap <C-M-[> :tabp<cr>
+:nmap <C-M-]> :tabn<cr>
