@@ -1,5 +1,8 @@
 " Shared vim configurations accross machines
 
+"Use pathogen for plugin management
+execute pathogen#infect()
+
 "jk to exit insert mode and save
 :imap jk <Esc>:w<cr>
 "Use jk to save in normal mode
