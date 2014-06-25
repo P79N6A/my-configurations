@@ -9,7 +9,10 @@ export PATH="$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH"
 #Add ~/.bin to path
 export PATH="$PATH:~/.bin"
 
+#Command aliases
 alias la="ls -A"
+alias ll="ls -l"
+alias ls="ls -1"
 
 #Customize prompt title
 #export PS1="\u@\h:\w$ "
