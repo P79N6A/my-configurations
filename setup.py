@@ -16,15 +16,23 @@ for link in links:
     print(cmd)
     os.system(cmd)
 
+def get_file_content(f):
+    content = ''
+    if os.path.exists(f):
+        fi = open(f)
+        content = fi.read()
+        fi.close()
+    return content
+
 def setup_bash(config_file, content):
-    f = open(home_dir+'/'+config_file,'r+')
-    contents = f.read()
-    print(contents)
-    contents = contents +  content
+    contents = get_file_content(config_file)
+    contents = contents+ content
+    f = open(config_file, 'w')
     f.write(contents)
     f.close()
 
 #Setup bash configuration
-setup_bash('.profile', '#Add for shared bash configuration\nif [ -f ~/.bash_profile_share ]; then\n    source ~/.bash_profile_share\nfi\n')
+setup_bash(home_dir+'/.bash_profile', '\n\n#Add for shared bash configuration\nif [ -f ~/.bash_profile_share ]; then\n    source ~/.bash_profile_share\nfi\n')
+
 #Setup vim configuration
-setup_bash('.vimrc', '\n\n"Add for shared vimrc configuration\nsource .vimrc_share\n')
+setup_bash(home_dir+'/.vimrc', '\n\n"Add for shared vimrc configuration\nsource .vimrc_share\n')
