@@ -3,11 +3,11 @@ export CLICOLOR=1
 #export LSCOLORS=ExFxCxDxBxegedabagacad
 
 #Add android tools to path
-export ANDROID_SDK="~/softwares/adt-bundle-mac/sdk"
-export PATH="$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH"
+export ANDROID_SDK="$HOME/softwares/adt-bundle-mac/sdk"
+export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 
 #Add ~/.bin to path
-export PATH="$PATH:~/.bin"
+export PATH="$PATH:$HOME/.bin"
 
 #Command aliases
 alias la="ls -A"

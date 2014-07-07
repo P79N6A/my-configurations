@@ -13,7 +13,7 @@ for f in os.listdir('//Library/WebServer/Documents'):
 home = expanduser("~")
 webdir = '/Library/WebServer/Documents/'
 count = count+1
-srcfile = home+'/yzou_view_androidrelease/Mobile_Client/Android/MSTRAndroidNative/bin/MSTRAndroidNative.apk'
+srcfile = home+'/code/workspace/MstrAndroid/Mobile_Client/Android/MSTRAndroidNative/bin/MSTRAndroidNative.apk'
 destfile = webdir+'MSTRAndroidNative'+str(count)+'.apk'
 releasefile = webdir+'MSTRAndroidNative.apk'
 shutil.copyfile(srcfile, destfile)
