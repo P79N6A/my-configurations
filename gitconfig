@@ -12,6 +12,7 @@
     br = branch
     co = checkout
 	lf = log --pretty=format:\"%h -- %an -- %ar -- %s\"
+	lbr = log --graph --all --decorate
 [core]
 	excludesfile = /Users/zouyong/.gitignore_global
 [push]

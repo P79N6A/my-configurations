@@ -13,7 +13,6 @@ execute pathogen#infect()
 
 "C-W to switch bewteen NERDTree window and the editor window
 :nmap <C-Q> <C-W><C-W>
-:imap <C-Q> <Esc><C-W>
 
 "make vim colorful
 filetype plugin indent on
@@ -33,8 +32,7 @@ set expandtab
 set incsearch
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase,
-                  "    case-sensitive otherwise
+set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
 
 "Control+Command+[ to show previous tab and Control+Command+] to show next tab
 :nmap <C-M-[> :tabp<cr>
@@ -72,8 +70,14 @@ set noswapfile
 vmap Q gq
 nmap Q gqap
 
+" Go to next line in long text
 nnoremap j gj
 nnoremap k gk
 
 "when you forgot to sudo before editing a file that requires, This lets you use w!! to do that after you opened the file already
 cmap w!! w !sudo tee % >/dev/null
+
+:imap <C-P> <up>
+:imap <C-N> <down>
+:imap <C-F> <left>
+:imap <C-B> <right>

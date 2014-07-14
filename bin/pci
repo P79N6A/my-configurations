@@ -1,0 +1,37 @@
+#!/bin/bash
+
+#
+# This file is used to automate the pre-checkin test require by QE team. 
+# It works by copying the apk from your workspace to the pre-checkin folder with the desired name and automatic starts the test.
+# Put this somewhere in your PATH and run this in a terminal when you want to run the pre-checkin 
+#
+# @author: Zou,Yong  yzou@microstrategy.com
+#
+
+
+# The name of your pre-checkin folder provided by QE, usually your corp domain name
+remote_precheckin_dir="yzou"
+
+# Your MSTR Android app project root path, relative to home dir
+mstr_workspace="code/workspace/MstrAndroid"
+
+# Local dir to mount to, relative to home dir
+local_precheckin_dir="yzou_pre_checkin"
+
+
+
+# If the local pre-checkin dir doesn't exist, then create it.
+if [ ! -d "$local_precheckin_dir" ]; then
+    mkdir $HOME/$local_precheckin_dir
+fi
+
+pre_checkin_server="smb://android-auto/Pre_CheckIn_APKs"
+
+#mount your remote Pre_CheckIn_APKs folder to your local machine
+mount_smbfs $pre_checkin_server/$remote_precheckin_dir $HOME/$local_precheckin_dir
+
+# Copy the apk to the pre-checkin folder
+cp $HOME/$mstr_workspace/Mobile_Client/Android/MSTRAndroidNative/bin/MSTRAndroidNative.apk $HOME/$local_precheckin_dir/MicroStrategy-release.apk
+
+# Open the Build.url to run the pre-checkin test
+open $HOME/$local_precheckin_dir/Build.url
