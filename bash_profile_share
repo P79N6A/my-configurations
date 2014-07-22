@@ -14,10 +14,6 @@ alias la="ls -A"
 alias ll="ls -l"
 alias ls="ls -1"
 
-#Customize prompt title
-#export PS1="\u@\h:\w$ "
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
