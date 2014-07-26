@@ -9,11 +9,10 @@ export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 #Add ~/.bin to path
 export PATH="$PATH:$HOME/.bin"
 
-
 #Command aliases
+alias ls="ls -GF"
 alias la="ls -A"
 alias ll="ls -l"
-alias ls="ls -G"
 alias l1="ls -1"
 #Directory jumping alias
 alias ..="cd .."
@@ -26,6 +25,7 @@ alias jdw="cd $HOME/Downloads/"
 alias jsw="cd ~/softwares"
 alias jmb="cd ~/.bin"
 
+alias tree="tree -C"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
