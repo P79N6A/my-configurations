@@ -1,0 +1,5 @@
+#!/usr/bin/ruby
+cwd = Dir.pwd
+home = Dir.home
+puts cwd[home.length+1...cwd.length]
+
