@@ -24,6 +24,7 @@ alias jbd="cd $HOME/.vim/bundle/"
 alias jdw="cd $HOME/Downloads/"
 alias jsw="cd ~/softwares"
 alias jmb="cd ~/.bin"
+alias hn="hostname"
 
 alias tree="tree -C"
 
