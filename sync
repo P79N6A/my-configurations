@@ -1,0 +1,4 @@
+#This file is used to update aliyun code from github
+
+dir=$(dir_to_home)
+layc "cd $dir; pwd; git pull"
