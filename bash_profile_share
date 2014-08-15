@@ -1,5 +1,5 @@
 #make ls shows color output
-export CLICOLOR=1
+#export CLICOLOR=1
 #export LSCOLORS=ExFxCxDxBxegedabagacad
 
 #Add android tools to path
