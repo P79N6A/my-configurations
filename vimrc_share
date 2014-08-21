@@ -74,7 +74,10 @@ nnoremap k gk
 "when you forgot to sudo before editing a file that requires, This lets you use w!! to do that after you opened the file already
 cmap w!! w !sudo tee % >/dev/null
 
+" Map some emacs key-bindings in insert mode
 :imap <C-P> <up>
 :imap <C-N> <down>
-:imap <C-F> <left>
-:imap <C-B> <right>
+:imap <C-F> <right>
+:imap <C-B> <left>
+:imap <C-E> <esc>A
+:imap <C-A> <esc>I
