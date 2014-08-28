@@ -1,5 +1,5 @@
 #make ls shows color output
-export CLICOLOR=1
+#export CLICOLOR=1
 #export LSCOLORS=ExFxCxDxBxegedabagacad
 
 #Add android tools to path
@@ -10,11 +10,13 @@ export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 export PATH="$PATH:$HOME/.bin"
 
 #Command aliases
-alias ls="ls -GF"
+alias ls="ls -pGF"
 alias la="ls -A"
 alias ll="ls -l"
+alias l1="ls -1"
 #Directory jumping alias
 alias ..="cd .."
+alias ...="cd ../.."
 alias jmcf="cd ~/code/others/my-configurations/"
 alias jrmb="cd ~/code/ruby/rails/remember/"
 alias jft="cd ~/code/ruby/rails/fighting"
@@ -23,6 +25,7 @@ alias jbd="cd $HOME/.vim/bundle/"
 alias jdw="cd $HOME/Downloads/"
 alias jsw="cd ~/softwares"
 alias jmb="cd ~/.bin"
+alias hn="hostname"
 
 alias tree="tree -C"
 
