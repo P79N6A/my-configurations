@@ -1,7 +1,11 @@
 " Shared vim configurations accross machines
+"
+"
+"
+"
 
 "jk to exit insert mode and save
-:imap jk <Esc><Esc>:w<cr>
+:imap jk <Esc>:w<cr>
 "Use jk to save in normal mode
 :nmap jk :w<cr>
 
@@ -45,22 +49,18 @@ set timeout timeoutlen=300 ttimeoutlen=1000
 "EasyMotion leader key
 let g:EasyMotion_leader_key = ','
 
-" mapleader
+"mapleader
 let mapleader=","
 
-" Quickly edit/reload the vimrc file
+"Quickly edit/reload the vimrc file
 nmap <leader>ev :e $MYVIMRC<CR>
 nmap <leader>sv :so $MYVIMRC<CR>
-
 nmap nt :NERDTree<cr>
-"Allow perverve buffer when :e to open other files
-set hidden
 
-"Show line number
+""Show line number
 set number
 
-set backupdir=~/tmp
-set showmatch     " set show matching parenthesis
+set showmatch     "set show matching parenthesis
 
 set visualbell           " don't beep
 set noerrorbells         " don't beep
@@ -80,12 +80,7 @@ nnoremap k gk
 "when you forgot to sudo before editing a file that requires, This lets you use w!! to do that after you opened the file already
 cmap w!! w !sudo tee % >/dev/null
 
-" Map some emacs key-bindings in insert mode
 :imap <C-P> <up>
 :imap <C-N> <down>
-:imap <C-F> <right>
-:imap <C-B> <left>
-:imap <C-E> <esc>A
-:imap <C-A> <esc>I
-
-let g:CommandTAcceptSelectionTabMap = '<CR>'
+:imap <C-F> <left>
+:imap <C-B> <right>
