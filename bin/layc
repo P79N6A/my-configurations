@@ -1,2 +1,2 @@
 #ssh chris@112.124.121.155 'export PATH=$PATH:~/.bin;'$1
-ssh chris@112.124.121.155 $1
+ssh chris@112.124.121.155 -p 8080 $1
