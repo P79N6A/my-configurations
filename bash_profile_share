@@ -32,3 +32,4 @@ alias tree="tree -C"
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
+export TERM=xterm
