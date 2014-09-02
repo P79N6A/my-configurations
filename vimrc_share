@@ -1,7 +1,7 @@
 " Shared vim configurations accross machines
 
 "jk to exit insert mode and save
-:imap jk <Esc>:w<cr>
+:imap jk <Esc><Esc>:w<cr>
 "Use jk to save in normal mode
 :nmap jk :w<cr>
 
@@ -81,3 +81,5 @@ cmap w!! w !sudo tee % >/dev/null
 :imap <C-B> <left>
 :imap <C-E> <esc>A
 :imap <C-A> <esc>I
+
+let g:CommandTAcceptSelectionTabMap = '<CR>'
