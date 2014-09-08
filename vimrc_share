@@ -82,5 +82,7 @@ cmap w!! w !sudo tee % >/dev/null
 
 :imap <C-P> <up>
 :imap <C-N> <down>
-:imap <C-F> <left>
-:imap <C-B> <right>
+:imap <C-B> <left>
+:imap <C-F> <right>
+:imap <C-A> <esc>I
+:imap <C-E> <esc>A
