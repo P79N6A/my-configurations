@@ -26,7 +26,7 @@ alias jdw="cd $HOME/Downloads/"
 alias jsw="cd ~/softwares"
 alias jmb="cd ~/.bin"
 alias hn="hostname"
-
+alias j="autojump"
 alias tree="tree -C"
 
 #make grep color matching
