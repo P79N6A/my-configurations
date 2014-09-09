@@ -22,7 +22,6 @@ set expandtab
 "Use 4 spaces for indention
 set shiftwidth=4
 set smartindent
-set autoindent
 "Use ; as : in normal mode
 :nmap ; :
 
