@@ -1,11 +1,7 @@
 " Shared vim configurations accross machines
-"
-"
-"
-"
 
 "jk to exit insert mode and save
-:imap jk <Esc>:w<cr>
+:imap jk <Esc><Esc>:w<cr>
 "Use jk to save in normal mode
 :nmap jk :w<cr>
 
