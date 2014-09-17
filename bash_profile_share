@@ -27,6 +27,7 @@ alias jsw="cd ~/softwares"
 alias jmb="cd ~/.bin"
 alias hn="hostname"
 alias j="autojump"
+alias jr="cd $HOME/code/ruby/rails"
 alias tree="tree -C"
 
 #make grep color matching
