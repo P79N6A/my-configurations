@@ -82,3 +82,7 @@ cmap w!! w !sudo tee % >/dev/null
 :imap <C-F> <right>
 :imap <C-A> <esc>I
 :imap <C-E> <esc>A
+
+"Open command t selection in new tab by default
+let g:CommandTAcceptSelectionMap = '<C-t>'
+let g:CommandTAcceptSelectionTabMap = '<CR>'
