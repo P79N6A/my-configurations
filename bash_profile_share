@@ -34,3 +34,6 @@ alias tree="tree -C"
 export GREP_OPTIONS='--color=auto'
 
 export TERM=xterm
+
+#Stop zsh from sharing history between different terminals
+setopt no_share_history
