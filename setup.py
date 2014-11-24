@@ -35,4 +35,4 @@ def setup_bash(config_file, content):
 setup_bash(home_dir+'/.bash_profile', '\n\n#Add for shared bash configuration\nif [ -f ~/.bash_profile_share ]; then\n    source ~/.bash_profile_share\nfi\n')
 
 #Setup vim configuration
-setup_bash(home_dir+'/.vimrc', '\n\n"Add for shared vimrc configuration\nsource .vimrc_share\n')
+setup_bash(home_dir+'/.vimrc', '\n\n"Add for shared vimrc configuration\nsource $HOME/.vimrc_share\n')
