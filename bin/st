@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+path = ARGV.length==0 ? '.' : ARGV[0]
+`open -a /Applications/SourceTree.app #{path}`
