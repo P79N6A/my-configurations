@@ -25,6 +25,7 @@ alias jbd="cd $HOME/.vim/bundle/"
 alias jdw="cd $HOME/Downloads/"
 alias jsw="cd ~/softwares"
 alias jmb="cd ~/.bin"
+alias jms="cd $HOME/code/ruby/rails/mysite"
 alias hn="hostname"
 alias j="autojump"
 alias jr="cd $HOME/code/ruby/rails"
@@ -34,3 +35,6 @@ alias tree="tree -C"
 export GREP_OPTIONS='--color=auto'
 
 export TERM=xterm
+
+#Stop zsh from sharing history between different terminals
+setopt no_share_history
