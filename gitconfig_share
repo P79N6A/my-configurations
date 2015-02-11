@@ -8,7 +8,7 @@
     st = status
     adda = add --all .
     cm = commit -m
-    gac = commit -am
+    ac = commit -am
     logo = log --oneline
     br = branch
     co = checkout

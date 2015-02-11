@@ -30,6 +30,7 @@ alias hn="hostname"
 alias j="autojump"
 alias jr="cd $HOME/code/ruby/rails"
 alias tree="tree -C"
+alias gac="git ac"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
