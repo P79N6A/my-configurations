@@ -87,6 +87,9 @@ cmap w!! w !sudo tee % >/dev/null
 let g:CommandTAcceptSelectionMap = '<C-t>'
 let g:CommandTAcceptSelectionTabMap = '<CR>'
 
+"Disable auto comment when pasting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 "F2 to toggle paste/nopaste mode
 set pastetoggle=<F2>
 
