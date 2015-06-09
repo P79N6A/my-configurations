@@ -3,7 +3,6 @@
 "jk to exit insert mode and save
 :imap jk <Esc><Esc>:w<cr>
 "Use jk to save in normal mode
-:nmap jk :w<cr>
 
 "nt to toggle NERDTree window
 :nmap nt :NERDTree<cr>

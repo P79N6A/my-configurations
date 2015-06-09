@@ -4,6 +4,7 @@
 
 #Add android tools to path
 export ANDROID_SDK="$HOME/softwares/adt-bundle-mac/sdk"
+export ANDROID_HOME="$HOME/softwares/adt-bundle-mac/sdk"
 export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 
 #Add ~/.bin to path
@@ -31,7 +32,10 @@ alias j="autojump"
 alias jr="cd $HOME/code/ruby/rails"
 alias tree="tree -C"
 alias gac="git ac"
-
+alias ez="vim ~/.bash_profile_share"
+alias ezl="vim ~/.zshrc"
+alias sz="source ~/.zshrc"
+alias jwk="cd ~/AndroidStudioProjects/remember"
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
