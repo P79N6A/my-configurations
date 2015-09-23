@@ -1,1 +1,1 @@
-adb logcat | grep zyzy
+adb logcat -s -v threadtime zyzy:*

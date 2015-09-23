@@ -30,16 +30,27 @@ alias jms="cd $HOME/code/ruby/rails/mysite"
 alias hn="hostname"
 alias j="autojump"
 alias jr="cd $HOME/code/ruby/rails"
+alias jwk="cd ~/AndroidStudioProjects/remember"
 alias tree="tree -C"
-alias gac="git ac"
+alias gac="git adda; git cm "
 alias ez="vim ~/.bash_profile_share"
+alias ev="vim ~/.vimrc_share"
 alias ezl="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
-alias jwk="cd ~/AndroidStudioProjects/remember"
+alias cls="clear"
+alias mr="chmod a+x "
+alias erbs="vim ~/.vim/bundle/vim-snippets/snippets/ruby.snippets"
+alias vim="mvim -v"
+alias japk="cd app/build/outputs/apk/"
+alias rmdbg="japk; rm *debug.apk; rm *unaligned.apk"
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
 export TERM=xterm
+export PATH=$PATH:$HOME/bin
 
 #Stop zsh from sharing history between different terminals
 setopt no_share_history
+
+unsetopt nomatch
+

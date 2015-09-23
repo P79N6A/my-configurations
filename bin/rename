@@ -1,13 +1,13 @@
-#!/Library/Frameworks/Python.framework/Versions/3.4/bin/python3
-'''
-Replace oldstr(the first argument) with newstr(the second argument) in file names under current directory
-'''
+#!/usr/bin/env ruby
 
-import os, sys
-oldstr = sys.argv[1]
-newstr = sys.argv[2]
-
-for oldname in os.listdir('.'):
-    newname = oldname.replace(oldstr, newstr)
-    print(oldname+"  ------>  "+newname)
-    os.rename(oldname, newname)
+files = Dir['*']
+oldname = ARGV[0]
+newname = ARGV[1] || ''
+files.each do |src|
+    if src.include?(oldname)
+        dst = src.gsub(oldname, newname)
+        cmd = "mv #{src} #{dst}"
+        puts cmd
+        `#{cmd}`
+    end
+end
