@@ -40,7 +40,6 @@ alias sz="source ~/.zshrc"
 alias cls="clear"
 alias mr="chmod a+x "
 alias erbs="vim ~/.vim/bundle/vim-snippets/snippets/ruby.snippets"
-alias vim="mvim -v"
 alias japk="cd app/build/outputs/apk/"
 alias rmdbg="japk; rm *debug.apk; rm *unaligned.apk"
 #make grep color matching

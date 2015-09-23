@@ -1,0 +1,15 @@
+[user]
+	email = bingyu@9beike.com
+	name = bingyu
+[color]
+    ui = true
+[alias]
+    st = status
+    adda = add --all .
+    cm = commit -m
+    ac = commit -am 
+    logo = log --oneline
+    br = branch
+    co = checkout
+    lf = log --pretty=format:\"%h -- %an -- %ar -- %s\"
+    lbr = log --graph --all --decorate
