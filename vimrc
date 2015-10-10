@@ -1,5 +1,6 @@
 " Shared vim configurations accross machines
 
+
 " ======================================= Vundle =========================================
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -152,3 +153,8 @@ nmap <C-l> <C-w>l
 " Switching tabs
 nmap <C-1> 1gt
 nmap <C-2> 2gt
+
+" Source local vimrc file
+if filereadable("~/.vimrc_local")
+    source "~/.vimrc_local"
+endif

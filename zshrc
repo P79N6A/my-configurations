@@ -55,3 +55,7 @@ setopt no_share_history
 
 unsetopt nomatch
 
+#Add for shared bash configuration
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi
