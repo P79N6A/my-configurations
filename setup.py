@@ -4,7 +4,8 @@ links = {
             "bash_profile_share": ".bash_profile_share", 
             "vimrc_share": ".vimrc_share",
             "gitconfig": ".gitconfig",
-            "bin": ".bin"
+            "bin": ".bin",
+            "tmux.conf": ".tmux.conf"
         }
 
 source_dir = os.getcwd()

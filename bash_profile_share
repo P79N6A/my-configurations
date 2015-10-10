@@ -42,6 +42,9 @@ alias mr="chmod a+x "
 alias erbs="vim ~/.vim/bundle/vim-snippets/snippets/ruby.snippets"
 alias japk="cd app/build/outputs/apk/"
 alias rmdbg="japk; rm *debug.apk; rm *unaligned.apk"
+alias ts="tmux new -s" #Tmux new session"
+alias ta="tmux attach"
+
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
