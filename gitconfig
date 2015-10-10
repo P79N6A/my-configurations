@@ -13,3 +13,10 @@
     co = checkout
     lf = log --pretty=format:\"%h -- %an -- %ar -- %s\"
     lbr = log --graph --all --decorate
+    lb = log --graph --all --decorate
+    dbr = branch -d
+    sync = fetch origin master:master
+[push]
+    default = matching
+[include]
+    path = $HOME/.gitconfig_local
