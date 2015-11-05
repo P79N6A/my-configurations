@@ -3,8 +3,8 @@
 #export LSCOLORS=ExFxCxDxBxegedabagacad
 
 #Add android tools to path
-export ANDROID_SDK="$HOME/softwares/adt-bundle-mac/sdk"
-export ANDROID_HOME="$HOME/softwares/adt-bundle-mac/sdk"
+export ANDROID_SDK="$HOME/Library/Android/sdk"
+export ANDROID_HOME=$ANDROID_SDK
 export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 
 #Add ~/.bin to path
@@ -43,12 +43,13 @@ alias japk="cd app/build/outputs/apk/"
 alias rmdbg="japk; rm *debug.apk; rm *unaligned.apk"
 alias ts="tmux new -s" #Tmux new session"
 alias ta="tmux attach"
+alias cpwd="pwd | pbcopy"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
 export TERM=xterm
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/.bin
 
 #Stop zsh from sharing history between different terminals
 setopt no_share_history
