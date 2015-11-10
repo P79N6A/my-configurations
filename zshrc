@@ -33,7 +33,7 @@ alias jr="cd $HOME/code/ruby/rails"
 alias tree="tree -C"
 alias gac="git adda; git cm "
 alias ez="vim ~/.zshrc"
-alias ev="vim ~/.vimrc_share"
+alias ev="vim ~/.vimrc"
 alias ezl="vim ~/.zshrc_local"
 alias sz="source ~/.zshrc"
 alias cls="clear"
@@ -49,7 +49,6 @@ alias cpwd="pwd | pbcopy"
 export GREP_OPTIONS='--color=auto'
 
 export TERM=xterm
-export PATH=$PATH:$HOME/bin:$HOME/.bin
 
 #Stop zsh from sharing history between different terminals
 setopt no_share_history
@@ -60,3 +59,5 @@ unsetopt nomatch
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

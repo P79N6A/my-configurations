@@ -33,7 +33,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'MarcWeber/vim-addon-mw-utils' " dependency for vim-snipmate
 Plugin 'tomtom/tlib_vim' " dependency for vim-snipmate
 Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+Plugin 'ChrisZou/vim-snippets'
 Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line

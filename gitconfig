@@ -20,3 +20,6 @@
     default = matching
 [include]
     path = $HOME/.gitconfig_local
+[core]
+	excludesfile = /Users/xiaochuang/.gitignore_global
+	editor = vim
