@@ -1,0 +1,2 @@
+#!/usr/bin/env ruby -w
+Dir.glob('*_test.rb').each {|file| system("ruby -rminitest/pride #{file}")}

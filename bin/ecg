@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby -w
+# This script is used to generate a class file for use in exercism exercise (http://exercism.io)
+filename = Dir.glob('*').find{|file| file.include?('_test.rb')}.gsub('_test.rb','')
+class_name = filename.split('_').map(&:capitalize).join
+File.write("#{filename}.rb", "class #{class_name}\nend")
+
