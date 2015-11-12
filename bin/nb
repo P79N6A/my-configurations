@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby -wKU
+if ARGV.length > 1
+  puts "Usage: ruby new_branch.rb [purpose]"
+  exit(1)
+end
+
+require 'date'
+user = `whoami`.strip
+branch_name = "dev_#{user}_#{Date.today.to_s.gsub('-','')}"
+branch_name << "_#{ARGV[0].gsub(' ','_')}" if ARGV.length == 1
+`git co -b #{branch_name}`

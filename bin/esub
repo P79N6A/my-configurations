@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby -w
+file_name = ARGV[0] || Dir.glob("*.rb").find{|file|!file.include?('test.rb')}
+puts "submitting file #{file_name} to exercism"
+system("exercism submit #{file_name}")

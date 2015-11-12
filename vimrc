@@ -79,6 +79,9 @@ set ruler
 "Control+Command+[ to show previous tab and Control+Command+] to show next tab
 :nmap <C-M-[> :tabp<cr>
 :nmap <C-M-]> :tabn<cr>
+nnoremap tt  :tabedit<Space>
+nnoremap gn  :tabn<cr>
+nnoremap gp  :tabp<cr>
 
 "Set timeout for key mapping
 set timeout timeoutlen=300 ttimeoutlen=1000
