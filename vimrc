@@ -23,14 +23,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-commentary'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-endwise'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-ruby/vim-ruby'
-
-Plugin 'MarcWeber/vim-addon-mw-utils' " dependency for vim-snipmate
+Plugin 'marcweber/vim-addon-mw-utils' " dependency for vim-snipmate
 Plugin 'tomtom/tlib_vim' " dependency for vim-snipmate
 Plugin 'garbas/vim-snipmate'
 Plugin 'ChrisZou/vim-snippets'
