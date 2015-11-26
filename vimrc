@@ -33,6 +33,7 @@ Plugin 'tomtom/tlib_vim' " dependency for vim-snipmate
 Plugin 'garbas/vim-snipmate'
 Plugin 'ChrisZou/vim-snippets'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -144,6 +145,7 @@ nmap <leader>r :w !ruby<cr>
 
 " Ruby file indent 2 space
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " Move cursor between windows
 nmap <C-h> <C-w>h
