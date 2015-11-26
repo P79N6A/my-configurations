@@ -44,6 +44,17 @@ alias rmdbg="japk; rm *debug.apk; rm *unaligned.apk"
 alias ts="tmux new -s" #Tmux new session"
 alias ta="tmux attach -t"
 alias cpwd="pwd | pbcopy"
+alias efr="exercism fetch ruby"
+alias jsn="cd ~/.vim/bundle/vim-snippets/snippets"
+alias glb="git lbr"
+alias gic="git init; gac "
+alias ja="cd ~/AndroidStudioProjects"
+alias jk="jekyll "
+alias jdk="cd $HOME/code/ruby/rails/daka"
+alias grd="gradle "
+alias grc="groovyConsole"
+alias del="rmtrash"
+alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
