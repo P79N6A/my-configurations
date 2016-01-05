@@ -42,7 +42,7 @@ alias erbs="vim ~/.vim/bundle/vim-snippets/snippets/ruby.snippets"
 alias japk="cd app/build/outputs/apk/"
 alias rmdbg="japk; rm *debug.apk; rm *unaligned.apk"
 alias ts="tmux new -s" #Tmux new session"
-alias ta="tmux attach"
+alias ta="tmux attach -t"
 alias cpwd="pwd | pbcopy"
 
 #make grep color matching
