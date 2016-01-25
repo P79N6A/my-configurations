@@ -4,7 +4,6 @@
 [color]
     ui = true
 [alias]
-    st = status
     adda = add --all .
     cm = commit -m
     ac = commit -am 
@@ -17,7 +16,7 @@
     dbr = branch -d
     sync = fetch origin master:master
 [push]
-    default = matching
+	default = current
 [include]
     path = ~/.gitconfig_local
 [core]
@@ -29,3 +28,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[pull]
+	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

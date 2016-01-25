@@ -8,7 +8,7 @@ export ANDROID_HOME=$ANDROID_SDK
 export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 
 #Add ~/.bin to path
-export PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:$HOME/.bin:$HOME/bin"
 
 #Command aliases
 alias ls="ls -pGF"
@@ -45,17 +45,20 @@ alias ts="tmux new -s" #Tmux new session"
 alias ta="tmux attach -t"
 alias cpwd="pwd | pbcopy"
 alias efr="exercism fetch ruby"
+alias efjs="exercism fetch javascript"
 alias jsn="cd ~/.vim/bundle/vim-snippets/snippets"
 alias glb="git lbr"
 alias gic="git init; gac "
 alias ja="cd ~/AndroidStudioProjects"
 alias jk="jekyll "
 alias jdk="cd $HOME/code/ruby/rails/daka"
+alias jbg="cd $HOME/code/ruby/jekyll/blog"
 alias grd="gradle "
 alias grc="groovyConsole"
 alias del="rmtrash"
 alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
-
+alias gfom="git fetch origin master:master"
+alias jas="jasmine-node"
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
