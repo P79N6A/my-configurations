@@ -8,6 +8,6 @@ if pwd.include?('ruby')
 elsif pwd.include?('javascript')
   filename = Dir.glob('*').find{|file| file.include?('.spec.js')}.gsub('.spec.js','')
   class_name = ARGV[0] || filename.split('-').map(&:capitalize).join
-  File.write("#{filename}.js", "class #{class_name} {\n  constructor(){\n  }\n}")
+  File.write("#{filename}.js", "'use strict'\nclass #{class_name} {\n  constructor(){\n  }\n}\n\nmodule.exports = #{class_name};")
 end
 
