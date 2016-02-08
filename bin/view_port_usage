@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby -w
+if ARGV.length == 0
+  puts "Port not specified"
+  exit(1)
+end
+system "sudo lsof -i :#{ARGV[0]}"
