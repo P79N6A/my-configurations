@@ -9,6 +9,7 @@ export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 
 #Add ~/.bin to path
 export PATH="$PATH:$HOME/.bin:$HOME/bin"
+export PATH="$PATH:$HOME/code/others/dotfiles/bin"
 
 #Command aliases
 alias ls="ls -pGF"
@@ -31,7 +32,6 @@ alias hn="hostname"
 alias j="autojump"
 alias jr="cd $HOME/code/ruby/rails"
 alias tree="tree -C"
-alias gac="git adda; git cm "
 alias ez="vim ~/.zshrc"
 alias ev="vim ~/.vimrc"
 alias ezl="vim ~/.zshrc_local"
@@ -47,8 +47,17 @@ alias cpwd="pwd | pbcopy"
 alias efr="exercism fetch ruby"
 alias efjs="exercism fetch javascript"
 alias jsn="cd ~/.vim/bundle/vim-snippets/snippets"
+alias jc="cd ~/code"
+alias jrb="cd ~/code/ruby"
+
+#Git aliases
+alias gac="git adda; git cm "
 alias glb="git lbr"
 alias gic="git init; gac "
+alias ftm="git fetch origin master:master"
+alias gpl="git pull"
+alias gdc="git diff --cached"
+
 alias ja="cd ~/AndroidStudioProjects"
 alias jk="jekyll "
 alias jks="jekyll serve"
@@ -59,8 +68,13 @@ alias grd="gradle "
 alias grc="groovyConsole"
 alias del="rmtrash"
 alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
-alias gfom="git fetch origin master:master"
 alias jas="jasmine-node"
+alias vbg="vim app/build.gradle"
+alias cnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
+alias nis="cnpm install --save"
+alias ni="cnpm install"
+alias nrs="npm run s"
+
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
@@ -77,3 +91,4 @@ if [ -f ~/.zshrc_local ]; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+function gtag() { git tag -a $1 -m $2 }
