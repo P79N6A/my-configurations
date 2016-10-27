@@ -20,7 +20,7 @@ layout: post
 title: #{title.gsub('-', ' ')}
 date: #{DateTime.now.to_s}
 comments: true
-changyan_sid: #{title}
+post_id: #{title}
 ---
 ]
 
@@ -28,4 +28,5 @@ File.open(path, 'w') do |f|
     f.write(header_content)
 end
 
+`atom .`
 `atom #{path}`
