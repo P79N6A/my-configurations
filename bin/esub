@@ -6,6 +6,8 @@ def get_submitting_file
     return Dir.glob('*.rb').find { |file| !file.include?('test.rb') }
   elsif pwd.include?('javascript')
     return Dir.glob('*.js').find { |file| !file.include?('.spec.js') }
+  elsif pwd.include?('elixir')
+    return Dir.glob('*.exs').find { |file| !file.include?('_test.exs') }
   end
 end
 file_name = get_submitting_file

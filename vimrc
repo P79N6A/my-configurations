@@ -37,6 +37,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ElmCast/elm-vim'
+Plugin 'elixir-lang/vim-elixir'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -166,7 +169,11 @@ let g:jsx_ext_required = 0
 "Use eslint to do syntastic check
 let g:syntastic_javascript_checkers = ['eslint']
 
+"Wubi input
+let g:bx_im_wubi_used = 1
+
 " Source local vimrc file
 if filereadable("~/.vimrc_local")
     source "~/.vimrc_local"
 endif
+
