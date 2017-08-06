@@ -1,6 +1,6 @@
 [user]
-	email = 
-	name = 
+	email = zoumengdie@gmail.com
+	name = ChrisZou
 [color]
     ui = true
 [alias]
@@ -20,7 +20,7 @@
 [include]
     path = ~/.gitconfig_local
 [core]
-	excludesfile = /Users/xiaochuang/.gitignore_global
+	excludesfile = /Users/chris/.gitignore_global
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -28,9 +28,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[pull]
-	rebase = true
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[commit]
+	template = /Users/chris/.stCommitMsg

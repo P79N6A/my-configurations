@@ -91,11 +91,15 @@ alias rn="react-native"
 alias rni="rn run-ios"
 alias rna="rn run-android"
 alias jrn="cd ~/code/reactnative"
+alias show_running_activity="adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'"
+alias jex="cd ~/code/elixir"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
 export TERM=xterm
+
+export EDITOR='vim'
 
 #Stop zsh from sharing history between different terminals
 setopt no_share_history
