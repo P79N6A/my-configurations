@@ -1,4 +1,15 @@
 #!/usr/bin/env ruby -w
-file_name = ARGV[0] || Dir.glob("*.rb").find{|file|!file.include?('test.rb')}
+def get_submitting_file
+  return ARGV[0] if ARGV.length > 0
+  pwd = `pwd`
+  if pwd.include?('ruby')
+    return Dir.glob('*.rb').find { |file| !file.include?('test.rb') }
+  elsif pwd.include?('javascript')
+    return Dir.glob('*.js').find { |file| !file.include?('.spec.js') }
+  elsif pwd.include?('elixir')
+    return Dir.glob('*.exs').find { |file| !file.include?('_test.exs') }
+  end
+end
+file_name = get_submitting_file
 puts "submitting file #{file_name} to exercism"
 system("exercism submit #{file_name}")

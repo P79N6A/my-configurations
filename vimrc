@@ -28,12 +28,18 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-endwise'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'justinj/vim-react-snippets'
 Plugin 'marcweber/vim-addon-mw-utils' " dependency for vim-snipmate
 Plugin 'tomtom/tlib_vim' " dependency for vim-snipmate
 Plugin 'garbas/vim-snipmate'
 Plugin 'ChrisZou/vim-snippets'
 Plugin 'tpope/vim-surround'
-
+Plugin 'tpope/vim-repeat'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ElmCast/elm-vim'
+Plugin 'elixir-lang/vim-elixir'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,6 +49,7 @@ filetype plugin indent on    " required
 "jk to exit insert mode and save
 :imap jk <Esc><Esc>:w<cr>
 "Use jk to save in normal mode
+":nmap jk :w<cr> disable for quick j response in normal mode
 
 "nt to toggle NERDTree window
 :nmap nt :NERDTree<cr>
@@ -144,6 +151,7 @@ nmap <leader>r :w !ruby<cr>
 
 " Ruby file indent 2 space
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " Move cursor between windows
 nmap <C-h> <C-w>h
@@ -155,7 +163,17 @@ nmap <C-l> <C-w>l
 nmap <C-1> 1gt
 nmap <C-2> 2gt
 
+" Allow JSX in normal JS files
+let g:jsx_ext_required = 0 
+
+"Use eslint to do syntastic check
+let g:syntastic_javascript_checkers = ['eslint']
+
+"Wubi input
+let g:bx_im_wubi_used = 1
+
 " Source local vimrc file
 if filereadable("~/.vimrc_local")
     source "~/.vimrc_local"
 endif
+

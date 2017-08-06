@@ -4,7 +4,6 @@
 [color]
     ui = true
 [alias]
-    st = status
     adda = add --all .
     cm = commit -m
     ac = commit -am 
@@ -17,11 +16,11 @@
     dbr = branch -d
     sync = fetch origin master:master
 [push]
-    default = matching
+	default = current
 [include]
     path = ~/.gitconfig_local
 [core]
-	excludesfile = /Users/xiaochuang/.gitignore_global
+	excludesfile = /Users/chris/.gitignore_global
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -31,3 +30,9 @@
 	trustExitCode = true
 [branch]
 	autosetuprebase = always
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[commit]
+	template = /Users/chris/.stCommitMsg

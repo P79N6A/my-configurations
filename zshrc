@@ -8,7 +8,8 @@ export ANDROID_HOME=$ANDROID_SDK
 export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 
 #Add ~/.bin to path
-export PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:$HOME/.bin:$HOME/bin"
+export PATH="$PATH:$HOME/code/others/dotfiles/bin"
 
 #Command aliases
 alias ls="ls -pGF"
@@ -31,7 +32,6 @@ alias hn="hostname"
 alias j="autojump"
 alias jr="cd $HOME/code/ruby/rails"
 alias tree="tree -C"
-alias gac="git adda; git cm "
 alias ez="vim ~/.zshrc"
 alias ev="vim ~/.vimrc"
 alias ezl="vim ~/.zshrc_local"
@@ -43,14 +43,65 @@ alias japk="cd app/build/outputs/apk/"
 alias rmdbg="japk; rm *debug.apk; rm *unaligned.apk"
 alias ts="tmux new -s" #Tmux new session"
 alias ta="tmux attach -t"
+alias tls="tmux list-sessions"
 alias cpwd="pwd | pbcopy"
 alias py3="python3"
 alias pc="rails c -e production"
+alias efr="exercism fetch ruby"
+alias efjs="exercism fetch javascript"
+alias jsn="cd ~/.vim/bundle/vim-snippets/snippets"
+alias jc="cd ~/code"
+alias jrb="cd ~/code/ruby"
+alias js="cd ~/code/js"
+
+#Git aliases
+alias gac="git adda; git cm "
+alias glb="git lbr"
+alias gic="git init; gac "
+alias ftm="git fetch origin master:master"
+alias gpl="git pull"
+alias gdc="git diff --cached"
+
+alias ja="cd ~/AndroidStudioProjects"
+alias jk="jekyll "
+alias jks="jekyll serve"
+alias jkb="jekyll build"
+alias jdk="cd $HOME/code/ruby/rails/daka"
+alias jbg="cd $HOME/code/ruby/jekyll/blog"
+alias jdoc="cd $HOME/Documents"
+alias grd="gradle "
+alias grc="groovyConsole"
+alias del="rmtrash"
+alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+alias jas="jasmine-node"
+alias vbg="vim app/build.gradle"
+alias cnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
+alias nis="cnpm install --save"
+alias ni="cnpm install"
+alias nrs="npm run s"
+alias epi="elm package install -y"
+alias tl="tmux list-sessions"
+alias efe="exercism fetch elixir"
+alias atm="atom ."
+alias jece="cd $HOME/code/exercism/elixir"
+alias jelx="cd $HOME/code/elixir"
+alias ism="iex -S mix"
+alias mps="mix phoenix.server"
+alias elx="elixir"
+alias elxc="elixirc"
+alias rn="react-native"
+alias rni="rn run-ios"
+alias rna="rn run-android"
+alias jrn="cd ~/code/reactnative"
+alias show_running_activity="adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'"
+alias jex="cd ~/code/elixir"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
 export TERM=xterm
+
+export EDITOR='vim'
 
 #Stop zsh from sharing history between different terminals
 setopt no_share_history
@@ -63,3 +114,4 @@ if [ -f ~/.zshrc_local ]; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+function gtag() { git tag -a $1 -m $2 }

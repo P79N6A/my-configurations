@@ -1,0 +1,49 @@
+" Shared vim configurations accross machines
+
+
+"jk to exit insert mode and save
+:imap jk <Esc><Esc>:w<cr>
+"Use jk to save in normal mode
+
+"make vim colorful
+filetype plugin indent on
+syntax on
+
+"Set tabstop to 4
+set tabstop=4
+"Replace tab with spaces
+set expandtab
+"Use 4 spaces for indention
+set shiftwidth=4
+set smartindent
+"Use ; as : in normal mode
+:nmap ; :
+
+"Immediately show search result, while typing
+set incsearch
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set hlsearch
+
+""Show line number
+set number
+
+set showmatch     "set show matching parenthesis
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+" Go to next line in long text
+nnoremap j gj
+nnoremap k gk
+
+"when you forgot to sudo before editing a file that requires, This lets you use w!! to do that after you opened the file already
+cmap w!! w !sudo tee % >/dev/null
+
+"Disable auto comment when pasting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Ruby file indent 2 space
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2

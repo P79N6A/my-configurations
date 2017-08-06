@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby -w
+if ARGV.length < 1
+  puts "Usage: #{__FILE__} file_to_upload"
+  exit(0)
+end
+
+cmd = "scp #{ARGV[0]} aliyun:~/blog/_site/images/#{ARGV[1] || ARGV[0]}"
+puts cmd
+system(cmd)
