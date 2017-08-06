@@ -44,6 +44,8 @@ alias rmdbg="japk; rm *debug.apk; rm *unaligned.apk"
 alias ts="tmux new -s" #Tmux new session"
 alias ta="tmux attach -t"
 alias cpwd="pwd | pbcopy"
+alias py3="python3"
+alias pc="rails c -e production"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
