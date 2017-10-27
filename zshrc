@@ -61,6 +61,7 @@ alias gic="git init; gac "
 alias ftm="git fetch origin master:master"
 alias gpl="git pull"
 alias gdc="git diff --cached"
+alias uap="git pull;gp"
 
 alias ja="cd ~/AndroidStudioProjects"
 alias jk="jekyll "
@@ -97,11 +98,14 @@ alias jrn="cd ~/code/reactnative"
 alias show_running_activity="adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'"
 alias jex="cd ~/code/elixir"
 alias py3="python3"
+alias updateandpush="git pull; gp"
+alias ims="iex -S mix phx.server"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
-export TERM=xterm
+#export TERM=xterm
+export TERM=xterm-256color
 
 export EDITOR='vim'
 

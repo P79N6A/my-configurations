@@ -22,13 +22,14 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-commentary'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-endwise'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'justinj/vim-react-snippets'
+" Plugin 'justinj/vim-react-snippets'
 Plugin 'marcweber/vim-addon-mw-utils' " dependency for vim-snipmate
 Plugin 'tomtom/tlib_vim' " dependency for vim-snipmate
 Plugin 'garbas/vim-snipmate'
@@ -36,15 +37,21 @@ Plugin 'ChrisZou/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'ElmCast/elm-vim'
+" Plugin 'ElmCast/elm-vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'wincent/command-t'
+Plugin 'rakr/vim-one'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " ======================================= Vundle End =========================================
 
+let g:deoplete#enable_at_startup = 1
 
 "jk to exit insert mode and save
 :imap jk <Esc><Esc>:w<cr>
@@ -110,6 +117,8 @@ set showmatch     "set show matching parenthesis
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
+let g:alchemist_tag_map = 'gd'
+
 "Don't use backup files
 set nobackup
 set noswapfile
@@ -163,16 +172,19 @@ nmap <C-l> <C-w>l
 nmap <C-1> 1gt
 nmap <C-2> 2gt
 
-" Allow JSX in normal JS files
-let g:jsx_ext_required = 0
-
-"Use eslint to do syntastic check
-let g:syntastic_javascript_checkers = ['eslint']
-
 "Wubi input
 let g:bx_im_wubi_used = 1
+let g:CommandTFileScanner = "git"
+set background=dark
+colorscheme one
+let g:airline_theme='one'
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 " Source local vimrc file
 if filereadable("~/.vimrc_local")
     source "~/.vimrc_local"
 endif
+
+set t_Co=256
