@@ -69,7 +69,7 @@ set expandtab
 set shiftwidth=4
 set smartindent
 "Use ; as : in normal mode
-:nmap ; :
+:nmap ' :
 
 "Immediately show search result, while typing
 set incsearch
@@ -164,7 +164,7 @@ nmap <C-1> 1gt
 nmap <C-2> 2gt
 
 " Allow JSX in normal JS files
-let g:jsx_ext_required = 0 
+let g:jsx_ext_required = 0
 
 "Use eslint to do syntastic check
 let g:syntastic_javascript_checkers = ['eslint']
@@ -176,4 +176,3 @@ let g:bx_im_wubi_used = 1
 if filereadable("~/.vimrc_local")
     source "~/.vimrc_local"
 endif
-

@@ -11,6 +11,8 @@ export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 export PATH="$PATH:$HOME/.bin:$HOME/bin"
 export PATH="$PATH:$HOME/code/others/dotfiles/bin"
 
+ZSH_THEME="muse"
+
 #Command aliases
 alias ls="ls -pGF"
 alias la="ls -A"
@@ -75,6 +77,7 @@ alias jas="jasmine-node"
 alias vbg="vim app/build.gradle"
 alias cnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
 alias nis="cnpm install --save"
+alias nisd="npm install --save-dev"
 alias ni="cnpm install"
 alias nrs="npm run s"
 alias epi="elm package install -y"
@@ -93,6 +96,7 @@ alias rna="rn run-android"
 alias jrn="cd ~/code/reactnative"
 alias show_running_activity="adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'"
 alias jex="cd ~/code/elixir"
+alias py3="python3"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
