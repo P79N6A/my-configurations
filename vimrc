@@ -1,81 +1,96 @@
 " Shared vim configurations accross machines
 
+call plug#begin('~/.vim/plugged')
 
-" ======================================= Vundle =========================================
-set nocompatible              " be iMproved, required
-filetype off                  " required
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-rails'
+Plug 'scrooloose/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-endwise'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'vim-ruby/vim-ruby'
+Plug 'marcweber/vim-addon-mw-utils' " dependency for vim-snipmate
+Plug 'tomtom/tlib_vim' " dependency for vim-snipmate
+Plug 'garbas/vim-snipmate'
+Plug 'ChrisZou/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdcommenter'
+Plug 'slashmili/alchemist.vim'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+  " use tab for completion
+  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+Plug 'roxma/nvim-yarp' " Required by deoplete
+Plug 'roxma/vim-hug-neovim-rpc' " Required by deoplete
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'rakr/vim-one'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
+Plug 'neomake/neomake'
+  " Run Neomake when I save any buffer
+  augroup neomake
+    autocmd! BufWritePost * Neomake
+  augroup END
+  " Don't tell me to use smartquotes in markdown ok?
+  let g:neomake_markdown_enabled_makers = []
 
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-rails'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-commentary'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-endwise'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'marcweber/vim-addon-mw-utils' " dependency for vim-snipmate
-Plugin 'tomtom/tlib_vim' " dependency for vim-snipmate
-Plugin 'garbas/vim-snipmate'
-Plugin 'ChrisZou/vim-snippets'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'slashmili/alchemist.vim'
+  " Configure a nice credo setup, courtesy https://github.com/neomake/neomake/pull/300
+  let g:neomake_elixir_enabled_makers = ['mix', 'mycredo']
+  function! NeomakeCredoErrorType(entry)
+    if a:entry.type ==# 'F'      " Refactoring opportunities
+      let l:type = 'W'
+    elseif a:entry.type ==# 'D'  " Software design suggestions
+      let l:type = 'I'
+    elseif a:entry.type ==# 'W'  " Warnings
+      let l:type = 'W'
+    elseif a:entry.type ==# 'R'  " Readability suggestions
+      let l:type = 'I'
+    elseif a:entry.type ==# 'C'  " Convention violation
+      let l:type = 'W'
+    else
+      let l:type = 'M'           " Everything else is a message
+    endif
+    let a:entry.type = l:type
+  endfunction
 
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp' " Required by deoplete
-Plugin 'roxma/vim-hug-neovim-rpc' " Required by deoplete
-
-Plugin 'wincent/command-t'
-
-Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'rakr/vim-one'
-Plugin 'neomake/neomake'
+  let g:neomake_elixir_mycredo_maker = {
+        \ 'exe': 'mix',
+        \ 'args': ['credo', 'list', '%:p', '--format=oneline'],
+        \ 'errorformat': '[%t] %. %f:%l:%c %m,[%t] %. %f:%l %m',
+        \ 'postprocess': function('NeomakeCredoErrorType')
+        \ }
 
 "Elixir
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'mhinz/vim-mix-format'
+Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format'
 
 "Wechat tiny app
-Plugin 'chemzqm/wxapp.vim'
+Plug 'chemzqm/wxapp.vim'
 
 "Auto close '"([{
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 
 "Auto close html tag
-Plugin 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag'
 
-Plugin 'kana/vim-textobj-user'
-Plugin 'andyl/vim-textobj-elixir'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" ======================================= Vundle End =========================================
+Plug 'kana/vim-textobj-user'
+Plug 'andyl/vim-textobj-elixir'
 
-" ~/.vimrc
-let g:neomake_elixir_enabled_makers = ['credo']
-autocmd! BufWritePost * Neomake
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
-let g:deoplete#enable_at_startup = 1
+call plug#end()
 
+" Set the title of the iterm tab
+set title
 " Auto format elixir code
 let g:mix_format_on_save = 1
 
@@ -135,6 +150,10 @@ let mapleader=","
 nmap <leader>ev :e $MYVIMRC<CR>
 nmap <leader>sv :so $MYVIMRC<CR>
 nmap nt :NERDTree<cr>
+
+" fzf mappings
+nmap <leader>t :Files<CR>
+nmap <leader>b :Buffers<CR>
 
 let g:alchemist_tag_map = 'gd'
 
@@ -220,4 +239,5 @@ if filereadable("~/.vimrc_local")
     source "~/.vimrc_local"
 endif
 
+autocmd! BufWritePost * Neomake
 set path+=.
