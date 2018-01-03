@@ -25,6 +25,7 @@ alias jmcf="cd ~/code/others/my-configurations/"
 alias jrmb="cd ~/code/ruby/rails/remember/"
 alias jft="cd ~/code/ruby/rails/fighting"
 alias jws="cd $HOME/code/workspace/"
+alias jwt="cd $HOME/code/elixir/witness"
 alias jbd="cd $HOME/.vim/bundle/"
 alias jdw="cd $HOME/Downloads/"
 alias jsw="cd ~/softwares"
@@ -34,8 +35,8 @@ alias hn="hostname"
 alias j="autojump"
 alias jr="cd $HOME/code/ruby/rails"
 alias tree="tree -C"
-alias ez="vim ~/.zshrc"
-alias ev="vim ~/.vimrc"
+alias ez="nvim ~/.zshrc"
+alias ev="nvim ~/.vimrc"
 alias ezl="vim ~/.zshrc_local"
 alias sz="source ~/.zshrc"
 alias cls="clear"
@@ -53,6 +54,7 @@ alias jsn="cd ~/.vim/bundle/vim-snippets/snippets"
 alias jc="cd ~/code"
 alias jrb="cd ~/code/ruby"
 alias js="cd ~/code/js"
+alias mdg=" mix deps.get"
 
 #Git aliases
 alias gac="git adda; git cm "
@@ -100,6 +102,7 @@ alias jex="cd ~/code/elixir"
 alias py3="python3"
 alias updateandpush="git pull; gp"
 alias ims="iex -S mix phx.server"
+alias vim="nvim"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
@@ -113,6 +116,9 @@ export EDITOR='vim'
 setopt no_share_history
 
 unsetopt nomatch
+
+# Enable iex histroy accross sessions
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 #Add for shared bash configuration
 if [ -f ~/.zshrc_local ]; then
