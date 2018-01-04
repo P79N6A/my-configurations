@@ -1,6 +1,7 @@
 " Shared vim configurations accross machines
 
 call plug#begin('~/.vim/plugged')
+Plug 'udalov/kotlin-vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
@@ -10,9 +11,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-endwise'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-endwise'
+
+Plug 'jistr/vim-nerdtree-tabs'
 Plug 'marcweber/vim-addon-mw-utils' " dependency for vim-snipmate
 Plug 'tomtom/tlib_vim' " dependency for vim-snipmate
 Plug 'garbas/vim-snipmate'
@@ -34,13 +36,6 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'rakr/vim-one'
 
 Plug 'neomake/neomake'
-  " Run Neomake when I save any buffer
-  augroup neomake
-    autocmd! BufWritePost * Neomake
-  augroup END
-  " Don't tell me to use smartquotes in markdown ok?
-  let g:neomake_markdown_enabled_makers = []
-
   " Configure a nice credo setup, courtesy https://github.com/neomake/neomake/pull/300
   let g:neomake_elixir_enabled_makers = ['mix', 'mycredo']
   function! NeomakeCredoErrorType(entry)
@@ -70,9 +65,6 @@ Plug 'neomake/neomake'
 "Elixir
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
-
-"Wechat tiny app
-Plug 'chemzqm/wxapp.vim'
 
 "Auto close '"([{
 Plug 'jiangmiao/auto-pairs'
@@ -152,7 +144,7 @@ nmap <leader>sv :so $MYVIMRC<CR>
 nmap nt :NERDTree<cr>
 
 " fzf mappings
-nmap <leader>t :Files<CR>
+nmap <leader>f :GFiles<CR>
 nmap <leader>b :Buffers<CR>
 
 let g:alchemist_tag_map = 'gd'
