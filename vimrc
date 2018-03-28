@@ -215,6 +215,9 @@ nnoremap <silent> ]C :clast<CR>
 nnoremap <silent> [t gT
 nnoremap <silent> ]t gt
 
+" Run current script
+nnoremap <leader>r :!%:p<cr>
+
 set background=dark
 colorscheme one
 let g:airline_theme='one'
