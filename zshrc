@@ -32,7 +32,6 @@ alias jsw="cd ~/softwares"
 alias jmb="cd ~/.bin"
 alias jms="cd $HOME/code/ruby/rails/mysite"
 alias hn="hostname"
-alias j="autojump"
 alias jr="cd $HOME/code/ruby/rails"
 alias tree="tree -C"
 alias ez="nvim ~/.zshrc"
@@ -103,6 +102,7 @@ alias py3="python3"
 alias updateandpush="git pull; gp"
 alias ims="iex -S mix phx.server"
 alias vim="nvim"
+alias bci="brew cask install"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'

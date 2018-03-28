@@ -6,7 +6,6 @@ Plug 'udalov/kotlin-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-rails'
-Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
@@ -25,46 +24,31 @@ Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'slashmili/alchemist.vim'
 
+Plug 'jremmen/vim-ripgrep'
+
+" Plug 'airblade/vim-gitgutter'
+" set signcolumn="yes"
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
-  " use tab for completion
-  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 Plug 'roxma/nvim-yarp' " Required by deoplete
 Plug 'roxma/vim-hug-neovim-rpc' " Required by deoplete
+
+" 微信小程序
+Plug 'chemzqm/wxapp.vim'
 
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'rakr/vim-one'
 
 Plug 'neomake/neomake'
-  " Configure a nice credo setup, courtesy https://github.com/neomake/neomake/pull/300
-  let g:neomake_elixir_enabled_makers = ['mix', 'mycredo']
-  function! NeomakeCredoErrorType(entry)
-    if a:entry.type ==# 'F'      " Refactoring opportunities
-      let l:type = 'W'
-    elseif a:entry.type ==# 'D'  " Software design suggestions
-      let l:type = 'I'
-    elseif a:entry.type ==# 'W'  " Warnings
-      let l:type = 'W'
-    elseif a:entry.type ==# 'R'  " Readability suggestions
-      let l:type = 'I'
-    elseif a:entry.type ==# 'C'  " Convention violation
-      let l:type = 'W'
-    else
-      let l:type = 'M'           " Everything else is a message
-    endif
-    let a:entry.type = l:type
-  endfunction
-
-  let g:neomake_elixir_mycredo_maker = {
-        \ 'exe': 'mix',
-        \ 'args': ['credo', 'list', '%:p', '--format=oneline'],
-        \ 'errorformat': '[%t] %. %f:%l:%c %m,[%t] %. %f:%l %m',
-        \ 'postprocess': function('NeomakeCredoErrorType')
-        \ }
+autocmd! BufWritePost * Neomake
 
 "Elixir
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
+Plug 'slashmili/alchemist.vim'
 
 "Auto close '"([{
 Plug 'jiangmiao/auto-pairs'
@@ -75,6 +59,13 @@ Plug 'alvan/vim-closetag'
 
 Plug 'kana/vim-textobj-user'
 Plug 'andyl/vim-textobj-elixir'
+Plug 'sgur/vim-textobj-parameter'
+Plug 'whatyouhide/vim-textobj-xmlattr'
+Plug 'lucapette/vim-textobj-underscore'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-function'
+Plug 'whatyouhide/vim-textobj-erb'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -144,7 +135,7 @@ nmap <leader>sv :so $MYVIMRC<CR>
 nmap nt :NERDTree<cr>
 
 " fzf mappings
-nmap <leader>f :GFiles<CR>
+nmap <leader>f :GFiles --cached --others --exclude-standard<CR>
 nmap <leader>b :Buffers<CR>
 
 let g:alchemist_tag_map = 'gd'
@@ -160,6 +151,11 @@ nmap Q gqap
 " Go to next line in long text
 nnoremap j gj
 nnoremap k gk
+
+map <Enter>   o<ESC>
+
+map <S-Enter> O<ESC>
+
 
 "when you forgot to sudo before editing a file that requires, This lets you use w!! to do that after you opened the file already
 cmap w!! w !sudo tee % >/dev/null
@@ -203,7 +199,13 @@ nnoremap <silent> ]a :next<CR>
 nnoremap <silent> [A :first<CR> 
 nnoremap <silent> ]A :last<CR>
 
-" Switching buffers
+" Switching location list
+nnoremap <silent> [l :cprevious<CR> 
+nnoremap <silent> ]l :cnext<CR> 
+nnoremap <silent> [L :cfirst<CR> 
+nnoremap <silent> ]L :clast<CR>
+
+" Switching quickfix list
 nnoremap <silent> [c :cprevious<CR> 
 nnoremap <silent> ]c :cnext<CR> 
 nnoremap <silent> [C :cfirst<CR> 
@@ -231,5 +233,4 @@ if filereadable("~/.vimrc_local")
     source "~/.vimrc_local"
 endif
 
-autocmd! BufWritePost * Neomake
 set path+=.
