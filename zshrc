@@ -26,6 +26,7 @@ alias jrmb="cd ~/code/ruby/rails/remember/"
 alias jft="cd ~/code/ruby/rails/fighting"
 alias jws="cd $HOME/code/workspace/"
 alias jwt="cd $HOME/code/elixir/witness"
+alias jxwt="cd $HOME/code/xiaochengxu/witness"
 alias jbd="cd $HOME/.vim/bundle/"
 alias jdw="cd $HOME/Downloads/"
 alias jsw="cd ~/softwares"
@@ -120,6 +121,7 @@ unsetopt nomatch
 # Enable iex histroy accross sessions
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+plugins=(git zsh-autosuggestions)
 #Add for shared bash configuration
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local

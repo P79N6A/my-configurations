@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby -w
 file_name = ARGV.first.gsub(".rb", "")
-`echo "#!/usr/bin/env ruby -w\n" > "#{file_name}.rb"`
+`echo "#!/usr/bin/env ruby\n" > "#{file_name}.rb"`
