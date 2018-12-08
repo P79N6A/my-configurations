@@ -107,6 +107,7 @@ alias bci="brew cask install"
 alias bi="brew install"
 alias git_set_upstream="git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD)"
 alias git_forward_master="git fetch . master:$(git rev-parse --abbrev-ref HEAD)"
+alias yd="youtube-dl -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' "
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
@@ -125,7 +126,11 @@ unsetopt nomatch
 export ERL_AFLAGS="-kernel shell_history enabled"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-plugins=(git zsh-autosuggestions)
+export GOPATH="$HOME/.go"
+export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/Library/Python/2.7/bin:$PATH
+export PATH=$PATH:/anaconda3/bin
+
 #Add for shared bash configuration
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
