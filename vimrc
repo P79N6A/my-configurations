@@ -22,7 +22,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
-Plug 'slashmili/alchemist.vim'
 
 Plug 'jremmen/vim-ripgrep'
 
@@ -45,11 +44,6 @@ Plug 'rakr/vim-one'
 Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
 
-"Elixir
-Plug 'elixir-editors/vim-elixir'
-Plug 'mhinz/vim-mix-format'
-Plug 'slashmili/alchemist.vim'
-
 "Auto close '"([{
 Plug 'jiangmiao/auto-pairs'
 
@@ -58,7 +52,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 
 Plug 'kana/vim-textobj-user'
-Plug 'andyl/vim-textobj-elixir'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'whatyouhide/vim-textobj-xmlattr'
 Plug 'lucapette/vim-textobj-underscore'
@@ -69,13 +62,12 @@ Plug 'whatyouhide/vim-textobj-erb'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
 " Set the title of the iterm tab
 set title
-" Auto format elixir code
-let g:mix_format_on_save = 1
 
 runtime macros/matchit.vim
 
@@ -138,8 +130,6 @@ nmap nt :NERDTree<cr>
 nmap <leader>f :GFiles --cached --others --exclude-standard<CR>
 nmap <leader>b :Buffers<CR>
 
-let g:alchemist_tag_map = 'gd'
-
 "Don't use backup files
 set nobackup
 set noswapfile
@@ -151,11 +141,6 @@ nmap Q gqap
 " Go to next line in long text
 nnoremap j gj
 nnoremap k gk
-
-map <Enter>   o<ESC>
-
-map <S-Enter> O<ESC>
-
 
 "when you forgot to sudo before editing a file that requires, This lets you use w!! to do that after you opened the file already
 cmap w!! w !sudo tee % >/dev/null
