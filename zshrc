@@ -5,9 +5,8 @@
 #Add android tools to path
 export ANDROID_SDK="$HOME/Library/Android/sdk"
 export ANDROID_HOME=$ANDROID_SDK
-export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 
-#Add ~/.bin to path
+export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 export PATH="$PATH:$HOME/.bin:$HOME/bin"
 export PATH="$PATH:$HOME/code/others/dotfiles/bin"
 
@@ -55,7 +54,6 @@ alias pc="rails c -e production"
 alias efr="exercism fetch ruby"
 alias efjs="exercism fetch javascript"
 alias jsn="cd ~/.vim/bundle/vim-snippets/snippets"
-alias jc="cd ~/code"
 alias jrb="cd ~/code/ruby"
 alias js="cd ~/code/js"
 alias mdg=" mix deps.get"
@@ -108,6 +106,9 @@ alias updateandpush="git pull; gp"
 alias ims="iex -S mix phx.server"
 alias vim="nvim"
 alias bci="brew cask install"
+alias bi="brew install"
+alias git_set_upstream="git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD)"
+alias git_forward_master="git fetch . master:$(git rev-parse --abbrev-ref HEAD)"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
@@ -124,6 +125,7 @@ unsetopt nomatch
 
 # Enable iex histroy accross sessions
 export ERL_AFLAGS="-kernel shell_history enabled"
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 plugins=(git zsh-autosuggestions)
 #Add for shared bash configuration

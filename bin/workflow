@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+activity = ARGV.first.to_sym
+workflows = {
+  work: ['Pen & paper',
+         'Coffee & warter',
+         'Bathroom',
+         'Close unrelated pages/apps',
+         'Put away your phone']
+}
+
+puts(workflows[activity].map.with_index { |item, index| "#{index + 1}. #{item}" })

@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+if ARGV.length != 1
+  puts "Usage: #{__FILE__} target_branch"
+  exit(1)
+end
+
+current_branch = `git rev-parse --abbrev-ref HEAD`.strip
+target_branch = ARGV[0]
+commands = ["git checkout #{target_branch}", 
+            'git pull',
+            "git checkout #{current_branch}",
+            "git rebase #{target_branch}"]
+
+commands.each do |cmd|
+  puts "\n\n------ #{cmd} ------"
+  unless system(cmd)
+    puts "------#{cmd} failed-----"
+    exit(1)
+  end
+end
+

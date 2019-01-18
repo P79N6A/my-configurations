@@ -1,13 +1,13 @@
 " Shared vim configurations accross machines
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'udalov/kotlin-vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-rails'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-ruby/vim-ruby'
@@ -29,7 +29,6 @@ Plug 'jremmen/vim-ripgrep'
 " set signcolumn="yes"
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
 Plug 'roxma/nvim-yarp' " Required by deoplete
@@ -39,7 +38,6 @@ Plug 'roxma/vim-hug-neovim-rpc' " Required by deoplete
 Plug 'chemzqm/wxapp.vim'
 
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'rakr/vim-one'
 
 Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
@@ -63,6 +61,7 @@ Plug 'whatyouhide/vim-textobj-erb'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'posva/vim-vue'
+Plug 'kaicataldo/material.vim'
 
 call plug#end()
 
@@ -85,6 +84,8 @@ nmap <C-Q> <C-W><C-W>
 "make vim colorful
 filetype plugin indent on
 syntax on
+
+
 
 "Set tabstop to 2
 set tabstop=2
@@ -203,19 +204,20 @@ nnoremap <silent> ]t gt
 " Run current script
 nnoremap <leader>r :!%:p<cr>
 
+" colorscheme
 set background=dark
-colorscheme one
-let g:airline_theme='one'
+colorscheme material
 if (has("termguicolors"))
     set termguicolors
 endif
+let g:airline_theme = 'material'
+" end colorscheme
 
 set t_Co=256
 
 " Expand current file's dir
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-let g:airline#extensions#tabline#fnamemod = ':t'
 " Source local vimrc file
 if filereadable("~/.vimrc_local")
     source "~/.vimrc_local"
