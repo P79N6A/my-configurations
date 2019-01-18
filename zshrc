@@ -11,6 +11,8 @@ export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 export PATH="$PATH:$HOME/.bin:$HOME/bin"
 export PATH="$PATH:$HOME/code/others/dotfiles/bin"
 
+ZSH_THEME="muse"
+
 #Command aliases
 alias ls="ls -pGF"
 alias la="ls -A"
@@ -23,17 +25,18 @@ alias jmcf="cd ~/code/others/my-configurations/"
 alias jrmb="cd ~/code/ruby/rails/remember/"
 alias jft="cd ~/code/ruby/rails/fighting"
 alias jws="cd $HOME/code/workspace/"
+alias jwt="cd $HOME/code/elixir/witness"
+alias jxwt="cd $HOME/code/xiaochengxu/witness"
 alias jbd="cd $HOME/.vim/bundle/"
 alias jdw="cd $HOME/Downloads/"
 alias jsw="cd ~/softwares"
 alias jmb="cd ~/.bin"
 alias jms="cd $HOME/code/ruby/rails/mysite"
 alias hn="hostname"
-alias j="autojump"
 alias jr="cd $HOME/code/ruby/rails"
 alias tree="tree -C"
-alias ez="vim ~/.zshrc"
-alias ev="vim ~/.vimrc"
+alias ez="nvim ~/.zshrc"
+alias ev="nvim ~/.vimrc"
 alias ezl="vim ~/.zshrc_local"
 alias sz="source ~/.zshrc"
 alias cls="clear"
@@ -53,6 +56,7 @@ alias jsn="cd ~/.vim/bundle/vim-snippets/snippets"
 alias jc="cd ~/code"
 alias jrb="cd ~/code/ruby"
 alias js="cd ~/code/js"
+alias mdg=" mix deps.get"
 
 #Git aliases
 alias gac="git adda; git cm "
@@ -61,6 +65,7 @@ alias gic="git init; gac "
 alias ftm="git fetch origin master:master"
 alias gpl="git pull"
 alias gdc="git diff --cached"
+alias uap="git pull;gp"
 
 alias ja="cd ~/AndroidStudioProjects"
 alias jk="jekyll "
@@ -77,6 +82,7 @@ alias jas="jasmine-node"
 alias vbg="vim app/build.gradle"
 alias cnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
 alias nis="cnpm install --save"
+alias nisd="npm install --save-dev"
 alias ni="cnpm install"
 alias nrs="npm run s"
 alias epi="elm package install -y"
@@ -95,11 +101,17 @@ alias rna="rn run-android"
 alias jrn="cd ~/code/reactnative"
 alias show_running_activity="adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'"
 alias jex="cd ~/code/elixir"
+alias py3="python3"
+alias updateandpush="git pull; gp"
+alias ims="iex -S mix phx.server"
+alias vim="nvim"
+alias bci="brew cask install"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
 
-export TERM=xterm
+#export TERM=xterm
+export TERM=xterm-256color
 
 export EDITOR='vim'
 
@@ -108,6 +120,10 @@ setopt no_share_history
 
 unsetopt nomatch
 
+# Enable iex histroy accross sessions
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+plugins=(git zsh-autosuggestions)
 #Add for shared bash configuration
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
