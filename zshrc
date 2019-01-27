@@ -1,6 +1,10 @@
 #make ls shows color output
 #export CLICOLOR=1
 #export LSCOLORS=ExFxCxDxBxegedabagacad
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
+ZSH_THEME="muse"
 
 #Add android tools to path
 export ANDROID_SDK="$HOME/Library/Android/sdk"
@@ -9,10 +13,6 @@ export ANDROID_HOME=$ANDROID_SDK
 export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 export PATH="$PATH:$HOME/.bin:$HOME/bin"
 export PATH="$PATH:$HOME/code/others/dotfiles/bin"
-
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="muse"
-source $ZSH/oh-my-zsh.sh
 
 #Command aliases
 alias ls="ls -pGF"
