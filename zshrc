@@ -11,7 +11,9 @@ export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 export PATH="$PATH:$HOME/.bin:$HOME/bin"
 export PATH="$PATH:$HOME/code/others/dotfiles/bin"
 
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="muse"
+source $ZSH/oh-my-zsh.sh
 
 #Command aliases
 alias ls="ls -pGF"
