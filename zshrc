@@ -1,8 +1,6 @@
 #make ls shows color output
 #export CLICOLOR=1
 #export LSCOLORS=ExFxCxDxBxegedabagacad
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 
 ZSH_THEME="muse"
 
@@ -133,5 +131,7 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 function gtag() { git tag -a $1 -m $2 }
