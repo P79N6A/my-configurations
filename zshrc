@@ -109,6 +109,7 @@ alias git_set_upstream="git branch --set-upstream-to=origin/$(git rev-parse --ab
 alias git_forward_master="git fetch . master:$(git rev-parse --abbrev-ref HEAD)"
 alias yd="youtube-dl -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' "
 alias c="code ."
+alias jn="jupyter notebook"
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
