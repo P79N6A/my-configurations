@@ -1,3 +1,5 @@
-#!/usr/bin/env ruby -w
-file_name = ARGV.first.gsub(".rb", "")
-`echo "#!/usr/bin/env ruby\n" > "#{file_name}.rb"`
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+file_name = ARGV.first.gsub('.rb', '')
+`echo "#!/usr/bin/env ruby\n" > "#{file_name}"`

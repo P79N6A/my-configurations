@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'gitlab'
+my_mrs = Gitlab.user_merge_requests(state: :opened, scope: :assigned_to_me)
+if my_mrs.count == 1
+  system("open #{my_mrs.first.web_url}")
+else
+  system("open https://code.byted.org/dashboard/merge_requests?assignee_id=6084")
+end
+
