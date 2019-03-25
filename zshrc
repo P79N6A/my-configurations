@@ -11,7 +11,11 @@ export ANDROID_HOME=$ANDROID_SDK
 export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 export PATH="$PATH:$HOME/.bin:$HOME/bin"
 export PATH="$PATH:$HOME/code/others/dotfiles/bin"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+export GOPATH="$HOME/.go"
+export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/Library/Python/2.7/bin:$PATH
+
 
 #Command aliases
 alias ls="ls -pGF"
@@ -110,6 +114,8 @@ alias yd="youtube-dl -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' "
 alias c="code ."
 alias jn="jupyter notebook"
 
+plugins=(git ruby)
+
 function git-set-upstream() {git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD) }
 function git-forward-branch() {git fetch . $1:$(git rev-parse --abbrev-ref HEAD) }
 
@@ -130,11 +136,6 @@ unsetopt nomatch
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-export GOPATH="$HOME/.go"
-export PATH=$PATH:$GOPATH/bin
-export PATH=$HOME/Library/Python/2.7/bin:$PATH
-export PATH=$PATH:/anaconda3/bin
 
 #Add for shared bash configuration
 if [ -f ~/.zshrc_local ]; then
