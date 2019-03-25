@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+commands = [
+  "gnb #{ARGV.join(' ')}",
+  "git add .",
+  %|git commit -am "#{ARGV.join(' ')}"|
+]
+
+commands.each do |cmd|
+  puts "\n\n------ #{cmd} ------"
+  unless system(cmd)
+    puts "------#{cmd} failed-----"
+    exit(1)
+  end
+end
+
