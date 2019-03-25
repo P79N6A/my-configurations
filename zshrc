@@ -11,6 +11,7 @@ export ANDROID_HOME=$ANDROID_SDK
 export PATH=$PATH:"$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools"
 export PATH="$PATH:$HOME/.bin:$HOME/bin"
 export PATH="$PATH:$HOME/code/others/dotfiles/bin"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #Command aliases
 alias ls="ls -pGF"
@@ -105,11 +106,12 @@ alias ims="source .env;iex -S mix phx.server"
 alias vim="nvim"
 alias bci="brew cask install"
 alias bi="brew install"
-alias git_set_upstream="git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD)"
-alias git_forward_master="git fetch . master:$(git rev-parse --abbrev-ref HEAD)"
 alias yd="youtube-dl -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' "
 alias c="code ."
 alias jn="jupyter notebook"
+
+function git-set-upstream() {git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD) }
+function git-forward-branch() {git fetch . $1:$(git rev-parse --abbrev-ref HEAD) }
 
 #make grep color matching
 export GREP_OPTIONS='--color=auto'
@@ -126,6 +128,7 @@ unsetopt nomatch
 
 # Enable iex histroy accross sessions
 export ERL_AFLAGS="-kernel shell_history enabled"
+
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 export GOPATH="$HOME/.go"
@@ -140,5 +143,10 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 function gtag() { git tag -a $1 -m $2 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/chris/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/chris/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chris/google-cloud-sdk/completion.zsh.inc'; fi
